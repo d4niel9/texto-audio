@@ -10,10 +10,10 @@ name_file = input('name file -> ') + '.mp3'
 def archivo(path, texto, name_file):
     audio = gTTS(texto, lang='es', tld='es')
     audio.save(name_file)
-    path = str(path) + '/outputfile/'
-    shutil.move(archivo, path)
+    path = str(path) + '/output/'
+    shutil.move(name_file, path)
     path += name_file
-    playsound(path)
     print('playing audio ' + path)
+    playsound(path)
 
 archivo(path=path, texto=texto, name_file=name_file)
