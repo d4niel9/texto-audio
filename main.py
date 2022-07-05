@@ -14,6 +14,6 @@ def archivo(path, name_file, texto):
     shutil.move(archivo, path)
     path += name_file
     playsound(path)
-    print('reproduciendo audio ' + path)
+    print('playing audio ' + path)
 
 archivo(path=path, name_file=name_file, texto=texto)
