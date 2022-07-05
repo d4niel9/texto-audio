@@ -1,14 +1,14 @@
 from gtts import gTTS
-import shutil
 import pathlib
+import shutil
 from playsound import playsound
 
 path = pathlib.Path().absolute()
-name_file = input('name file') + '.mp3'
-texto = 'Soy el texto convertido en audio'
+texto = input('text to convert -> ')
+name_file = input('name file -> ') + '.mp3'
 
-def archivo(path, name_file, texto):
-    audio = gTTSS(texto, lang='es', tld='es')
+def archivo(path, texto, name_file):
+    audio = gTTS(texto, lang='es', tld='es')
     audio.save(name_file)
     path = str(path) + '/outputfile/'
     shutil.move(archivo, path)
@@ -16,4 +16,4 @@ def archivo(path, name_file, texto):
     playsound(path)
     print('playing audio ' + path)
 
-archivo(path=path, name_file=name_file, texto=texto)
+archivo(path=path, texto=texto, name_file=name_file)
